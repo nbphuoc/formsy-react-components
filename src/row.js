@@ -36,7 +36,7 @@ var Row = createReactClass({
 
     getDefaultProps: function() {
         return {
-            label: '',
+            label: null,
             rowClassName: '',
             labelClassName: '',
             elementWrapperClassName: '',
@@ -135,7 +135,7 @@ var Row = createReactClass({
         cssClasses.row.push(this.props.rowClassName);
         return (
             <div className={classNames(cssClasses.row)}>
-                {this.renderLabel()}
+                {this.props.label !== null ? this.renderLabel() : null}
                 {element}
             </div>
         );
